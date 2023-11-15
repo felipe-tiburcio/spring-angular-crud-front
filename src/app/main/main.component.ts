@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from 'src/models/User';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-main',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent {
+  constructor(private service: UserService) {}
+
   isVisible: boolean = true;
+
+  users: User[] = [];
+
+  getUsers(): void {
+    this.service.getUsers().subscribe((data) => (this.users = data));
+  }
 }
