@@ -4,10 +4,30 @@
   <input type="number" placeholder="Age" class="form-control" />
   <input placeholder="City" class="form-control" />
 
-  <input type="button" value="Create" class="btn btn-primary" />
-  <input type="button" value="Update" class="btn btn-warning" />
-  <input type="button" value="Remove" class="btn btn-danger" />
-  <input type="button" value="Cancel" class="btn btn-secondary" />
+  <input
+    type="button"
+    *ngIf="isVisible"
+    value="Create"
+    class="btn btn-primary"
+  />
+  <input
+    type="button"
+    *ngIf="!isVisible"
+    value="Update"
+    class="btn btn-warning"
+  />
+  <input
+    type="button"
+    *ngIf="!isVisible"
+    value="Remove"
+    class="btn btn-danger"
+  />
+  <input
+    type="button"
+    *ngIf="!isVisible"
+    value="Cancel"
+    class="btn btn-secondary"
+  />
 </form>
 
 <table class="table">
