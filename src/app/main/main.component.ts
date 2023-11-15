@@ -10,6 +10,10 @@ import { UserService } from '../services/user.service';
 export class MainComponent {
   constructor(private service: UserService) {}
 
+  ngOnInit() {
+    this.getUsers();
+  }
+
   isVisible: boolean = true;
 
   users: User[] = [];

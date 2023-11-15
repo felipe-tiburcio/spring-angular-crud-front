@@ -41,5 +41,15 @@
     </tr>
   </thead>
 
-  <tbody></tbody>
+  <tbody>
+    <tr *ngFor="let u of users">
+      <td>{{ u.id }}</td>
+      <td>{{ u.name }}</td>
+      <td>{{ u.age }}</td>
+      <td>{{ u.city }}</td>
+      <td>
+        <button class="btn btn-success">Select</button>
+      </td>
+    </tr>
+  </tbody>
 </table>
