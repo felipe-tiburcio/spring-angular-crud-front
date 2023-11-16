@@ -1,8 +1,24 @@
 <form action="">
   <img src="assets/user-icon.png" alt="user-icon" />
-  <input placeholder="Name" class="form-control" />
-  <input type="number" placeholder="Age" class="form-control" />
-  <input placeholder="City" class="form-control" />
+  <input
+    placeholder="Name"
+    class="form-control"
+    name="name"
+    [(ngModel)]="user.name"
+  />
+  <input
+    type="number"
+    placeholder="Age"
+    class="form-control"
+    name="age"
+    [(ngModel)]="user.age"
+  />
+  <input
+    placeholder="City"
+    class="form-control"
+    name="city"
+    [(ngModel)]="user.city"
+  />
 
   <input
     type="button"
@@ -29,6 +45,8 @@
     class="btn btn-secondary"
   />
 </form>
+
+<h1>{{ user | json }}</h1>
 
 <table class="table">
   <thead>

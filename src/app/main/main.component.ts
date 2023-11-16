@@ -16,6 +16,8 @@ export class MainComponent {
 
   isVisible: boolean = true;
 
+  user = new User();
+
   users: User[] = [];
 
   getUsers(): void {
