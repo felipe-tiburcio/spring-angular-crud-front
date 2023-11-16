@@ -39,4 +39,21 @@ export class MainComponent {
     this.isButtonVisible = false;
     this.isTableVisible = false;
   }
+
+  updateUser(): void {
+    this.service.update(this.user).subscribe((data) => {
+      const index = this.users.findIndex((obj) => {
+        return obj.id === data.id;
+      });
+
+      this.users[index] = data;
+
+      this.isButtonVisible = true;
+      this.isTableVisible = true;
+
+      alert('User updated!');
+
+      this.user = new User();
+    });
+  }
 }
