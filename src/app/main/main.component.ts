@@ -56,4 +56,21 @@ export class MainComponent {
       this.user = new User();
     });
   }
+
+  removeUser(): void {
+    this.service.update(this.user).subscribe((data) => {
+      const index = this.users.findIndex((obj) => {
+        return obj.id === this.user.id;
+      });
+
+      this.users.splice(index, 1);
+
+      this.isButtonVisible = true;
+      this.isTableVisible = true;
+
+      alert('User removed!');
+
+      this.user = new User();
+    });
+  }
 }
