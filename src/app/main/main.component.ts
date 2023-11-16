@@ -23,4 +23,8 @@ export class MainComponent {
   getUsers(): void {
     this.service.getUsers().subscribe((data) => (this.users = data));
   }
+
+  createUser(): void {
+    this.service.create(this.user).subscribe((data) => this.users.push(data));
+  }
 }

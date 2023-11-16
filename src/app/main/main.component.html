@@ -25,6 +25,7 @@
     *ngIf="isVisible"
     value="Create"
     class="btn btn-primary"
+    (click)="createUser()"
   />
   <input
     type="button"
@@ -45,8 +46,6 @@
     class="btn btn-secondary"
   />
 </form>
-
-<h1>{{ user | json }}</h1>
 
 <table class="table">
   <thead>
