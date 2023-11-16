@@ -25,6 +25,11 @@ export class MainComponent {
   }
 
   createUser(): void {
-    this.service.create(this.user).subscribe((data) => this.users.push(data));
+    this.service.create(this.user).subscribe((data) => {
+      this.users.push(data);
+      this.user = new User();
+
+      alert('User created!');
+    });
   }
 }
