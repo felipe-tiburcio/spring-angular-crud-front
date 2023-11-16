@@ -73,4 +73,10 @@ export class MainComponent {
       this.user = new User();
     });
   }
+
+  cancel(): void {
+    this.isButtonVisible = true;
+    this.isTableVisible = true;
+    this.user = new User();
+  }
 }
