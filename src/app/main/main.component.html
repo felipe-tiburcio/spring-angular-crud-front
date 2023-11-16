@@ -22,32 +22,32 @@
 
   <input
     type="button"
-    *ngIf="isVisible"
+    *ngIf="isButtonVisible"
     value="Create"
     class="btn btn-primary"
     (click)="createUser()"
   />
   <input
     type="button"
-    *ngIf="!isVisible"
+    *ngIf="!isButtonVisible"
     value="Update"
     class="btn btn-warning"
   />
   <input
     type="button"
-    *ngIf="!isVisible"
+    *ngIf="!isButtonVisible"
     value="Remove"
     class="btn btn-danger"
   />
   <input
     type="button"
-    *ngIf="!isVisible"
+    *ngIf="!isButtonVisible"
     value="Cancel"
     class="btn btn-secondary"
   />
 </form>
 
-<table class="table">
+<table class="table" *ngIf="isTableVisible">
   <thead>
     <tr>
       <th>#</th>
@@ -59,13 +59,13 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let u of users">
+    <tr *ngFor="let u of users; index as i">
       <td>{{ u.id }}</td>
       <td>{{ u.name }}</td>
       <td>{{ u.age }}</td>
       <td>{{ u.city }}</td>
       <td>
-        <button class="btn btn-success">Select</button>
+        <button class="btn btn-success" (click)="selectUser(i)">Select</button>
       </td>
     </tr>
   </tbody>

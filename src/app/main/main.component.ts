@@ -14,7 +14,8 @@ export class MainComponent {
     this.getUsers();
   }
 
-  isVisible: boolean = true;
+  isButtonVisible: boolean = true;
+  isTableVisible: boolean = true;
 
   user = new User();
 
@@ -31,5 +32,11 @@ export class MainComponent {
 
       alert('User created!');
     });
+  }
+
+  selectUser(index: number): void {
+    this.user = this.users[index];
+    this.isButtonVisible = false;
+    this.isTableVisible = false;
   }
 }
